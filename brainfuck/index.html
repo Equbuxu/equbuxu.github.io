@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf8">
+    <title>Brainfuck interpreter</title>
+    <meta name="description" content="Brainfuck interpreter">
+    <meta name="author" content="Equbuxu">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flex-column main-box">
+        <div class="flex-row header">
+            <button onclick="runPressed()">Run to end</button>
+            <button onclick="runToBreakpointPressed()">Run to breakpoint</button>
+            <button onclick="stepPressed()">One step</button>
+            <button onclick="stepMultPressed(100)">100 steps</button>
+            <button onclick="pausePressed()">Pause</button>
+            <button onclick="stopPressed()">Stop</button>
+            <div id="status">Idle</div>
+            <div id="error" class="error"></div>
+            <div class="the-growing-one"><div style="text-align: right; margin-right: 10px;">Use "*" as a breakpoint</div></div>
+        </div>
+        <div class="flex-row the-growing-one">
+            <div class="half-size flex-column">
+                <div class="program-label">Program</div>
+                <div id="program" contenteditable="true" class="edit-box the-growing-one program-edit-box" style="line-height: 1.5">[ pi calculation program in bf by Felix Nawothnig (felix.nawothnig@t-online.de) ]
+                  
+&gt;  +++++ +++++ +++++ (15 digits)
+                  
+[&lt;+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;++++++++++&lt;&lt;&lt;&lt;&lt;&lt;&lt;-]&gt;+++++[&lt;+++++++++&gt;-]+&gt;&gt;&gt;&gt;&gt;&gt;+[&lt;&lt;+++[&gt;&gt;[-&lt;]&lt;[&gt;]&lt;-]&gt;&gt;[&gt;+&gt;]&lt;[&lt;]&gt;]&gt;[[-&gt;&gt;&gt;&gt;+&lt;&lt;&lt;&lt;]&gt;&gt;&gt;+++&gt;-]&lt;[&lt;&lt;&lt;&lt;]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+[-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;[&lt;+[-&gt;&gt;&gt;&gt;+&lt;&lt;&lt;&lt;]&gt;&gt;&gt;&gt;&gt;]&lt;&lt;&lt;&lt;[&gt;&gt;&gt;&gt;&gt;[&lt;&lt;&lt;&lt;+&gt;&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;-[&lt;&lt;++++++++++&gt;&gt;-]&gt;&gt;&gt;[&lt;&lt;[&lt;+&lt;&lt;+&gt;&gt;&gt;-]&lt;[&gt;+&lt;-]&lt;++&lt;&lt;+&gt;&gt;&gt;&gt;&gt;&gt;-]&lt;&lt;[-]&lt;&lt;-&lt;[-&gt;&gt;+&lt;-[&gt;&gt;&gt;]&gt;[[&lt;+&gt;-]&gt;+&gt;&gt;]&lt;&lt;&lt;&lt;&lt;]&gt;[-]&gt;+&lt;&lt;&lt;-[&gt;&gt;+&lt;&lt;-]&lt;]&lt;&lt;&lt;&lt;+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;[-]&gt;[&lt;&lt;&lt;+&gt;&gt;&gt;-]&lt;&lt;++++++++++&lt;[-&gt;&gt;+&lt;-[&gt;&gt;&gt;]&gt;[[&lt;+&gt;-]&gt;+&gt;&gt;]&lt;&lt;&lt;&lt;&lt;]&gt;[-]&gt;+&gt;[&lt;&lt;+&lt;+&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;+&lt;+&gt;&gt;[-[-[-[-[-[-[-[-[-&lt;-&gt;[-&lt;+&lt;-&gt;&gt;]]]]]]]]]]&lt;[+++++[&lt;&lt;&lt;++++++++&lt;++++++++&gt;&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;+&lt;-&gt;&gt;&gt;&gt;[&gt;+&lt;&lt;&lt;+++++++++&lt;-&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;[&gt;&gt;+&lt;&lt;-]+&lt;[-&gt;-&lt;]&gt;[&gt;&gt;.&lt;&lt;&lt;&lt;[+.[-]]&gt;&gt;-]&gt;[&gt;&gt;.&lt;&lt;-]&gt;[-]&gt;[-]&gt;&gt;&gt;[&gt;&gt;[&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;-]&lt;&lt;-]]&gt;&gt;[-]&lt;&lt;&lt;[-]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;]++++++++++.
+</div>
+                </div>            
+            <div class="flex-column half-size">
+                <div class="half-size flex-column">
+                    <div class="flex-row label" style="justify-content: space-between;">
+                        <div class="flex-row">
+                            <div>Memory:</div>
+                            <div id="memoryPointer" style="margin-left:15px">0</div>
+                        </div>
+                        <div class="flex-row">
+                            <div style="margin-right: 5px;">Address offset:</div>
+                            <input type="number" min="0" max="30000" id="addressOffset" value="0">
+                        </div>
+                    </div>
+                    <div id="memory" class="edit-box the-growing-one">Run the program...</div>
+                </div>
+                <div class="flex-row half-size">
+                    <div class="flex-column half-size">
+                        <div class="label">Program Input</div>
+                        <div id="input" contenteditable="true" class="edit-box the-growing-one"></div>
+                    </div>
+                    <div class="flex-column half-size">
+                        <div class="label border-left-dark">Program Output</div>
+                        <div id="output" class="edit-box the-growing-one border-left"></div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

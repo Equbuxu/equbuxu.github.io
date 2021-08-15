@@ -1,0 +1,156 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #222d36;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+div.header {
+    background-color: #0d1416;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+div.program-label {
+    padding: 5px;
+    font-weight: bolder;
+    background-color: #627b8e;
+    flex-shrink: 0;
+}
+
+div.program-edit-box {
+    background-color: #181f27;
+}
+
+div.edit-box {
+    font-family: monospace, 'Courier New', Courier;
+    border-style: none;
+    color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    word-break: break-all;
+    white-space: break-spaces;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #87BCDE transparent;
+}
+
+div.border-left {
+    border-left:  #3a474e;
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+
+div.border-left-dark {
+    border-left:  #222d36;
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+
+
+div.edit-box:focus {
+    outline: 0px solid transparent;
+}
+
+div.label {
+    padding: 5px;
+    font-weight: bolder;
+    background-color: #475968;
+    flex-shrink: 0;
+}
+
+div.error {
+    margin-left: 5px;
+    font-weight: bolder;
+    color: red;
+}
+
+div.the-growing-one {
+    flex-grow: 1;
+}
+
+div.half-size {
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+div.flex-row {
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
+}
+
+div.flex-column {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+div.main-box {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+button {
+	display: inline-block;
+    margin: 5px;
+    padding: 6px 8px;
+    border: 0;
+    border-radius: 1px;
+	background-color: #87BCDE;
+    color: white;
+    text-shadow: 0px 1px 2px #0d1416;
+    font-size: 1rem;
+    font-family: Tahoma;
+    line-height: 1;
+	cursor: pointer;
+}
+
+button:hover {
+    background-color: #a5d8f8;
+}
+
+span.program-pointer {
+    background-color: rgb(54 195 54);
+    text-shadow: 0 1px 2px black;
+    border-radius: 2px;
+}
+
+span.memory-pointer {
+    background-color: rgb(135 188 222);
+    text-shadow: 0 1px 2px black;
+}
+
+span.error-highlight {
+    background-color: red;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #87BCDE;
+    border-radius: 10px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
